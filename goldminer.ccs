@@ -1,0 +1,241 @@
+<Solution>
+  <PropertyGroup Name="goldminer" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="iphonehd">
+          <PlistImageFolder Image="general-sheet.png" PListFile="general-sheet.plist" Name=".general-sheet_PList.Dir">
+            <PlistImageFile Name="achievement-android-btn-0.png" Key="achievement-android-btn-0.png" />
+            <PlistImageFile Name="achievement-android-btn-1.png" Key="achievement-android-btn-1.png" />
+            <PlistImageFile Name="achievement-iOS-btn-0.png" Key="achievement-iOS-btn-0.png" />
+            <PlistImageFile Name="achievement-iOS-btn-1.png" Key="achievement-iOS-btn-1.png" />
+            <PlistImageFile Name="auto-btn-0.png" Key="auto-btn-0.png" />
+            <PlistImageFile Name="auto-btn-1.png" Key="auto-btn-1.png" />
+            <PlistImageFile Name="blink-text-back.png" Key="blink-text-back.png" />
+            <PlistImageFile Name="btn-0.png" Key="btn-0.png" />
+            <PlistImageFile Name="btn-1.png" Key="btn-1.png" />
+            <PlistImageFile Name="btn-2.png" Key="btn-2.png" />
+            <PlistImageFile Name="cave-0.png" Key="cave-0.png" />
+            <PlistImageFile Name="cave-1.png" Key="cave-1.png" />
+            <PlistImageFile Name="cave-2.png" Key="cave-2.png" />
+            <PlistImageFile Name="close-btn-0.png" Key="close-btn-0.png" />
+            <PlistImageFile Name="close-btn-1.png" Key="close-btn-1.png" />
+            <PlistImageFile Name="cloud.png" Key="cloud.png" />
+            <PlistImageFile Name="cloud-night.png" Key="cloud-night.png" />
+            <PlistImageFile Name="day-btn-0.png" Key="day-btn-0.png" />
+            <PlistImageFile Name="day-btn-1.png" Key="day-btn-1.png" />
+            <PlistImageFile Name="diamond-polish.png" Key="diamond-polish.png" />
+            <PlistImageFile Name="dynamite.png" Key="dynamite.png" />
+            <PlistImageFile Name="english-btn-0.png" Key="english-btn-0.png" />
+            <PlistImageFile Name="english-btn-1.png" Key="english-btn-1.png" />
+            <PlistImageFile Name="facebook-btn-0.png" Key="facebook-btn-0.png" />
+            <PlistImageFile Name="facebook-btn-1.png" Key="facebook-btn-1.png" />
+            <PlistImageFile Name="game-center-btn-0.png" Key="game-center-btn-0.png" />
+            <PlistImageFile Name="game-center-btn-1.png" Key="game-center-btn-1.png" />
+            <PlistImageFile Name="icon-288.png" Key="icon-288.png" />
+            <PlistImageFile Name="icon-gold-miner-ios7-200.png" Key="icon-gold-miner-ios7-200.png" />
+            <PlistImageFile Name="leaderboard-btn-0.png" Key="leaderboard-btn-0.png" />
+            <PlistImageFile Name="leaderboard-btn-1.png" Key="leaderboard-btn-1.png" />
+            <PlistImageFile Name="lucky-clover.png" Key="lucky-clover.png" />
+            <PlistImageFile Name="menu1-btn-0.png" Key="menu1-btn-0.png" />
+            <PlistImageFile Name="menu1-btn-1.png" Key="menu1-btn-1.png" />
+            <PlistImageFile Name="menu2-close-btn-0.png" Key="menu2-close-btn-0.png" />
+            <PlistImageFile Name="menu2-close-btn-1.png" Key="menu2-close-btn-1.png" />
+            <PlistImageFile Name="menu2-open-btn-0.png" Key="menu2-open-btn-0.png" />
+            <PlistImageFile Name="menu2-open-btn-1.png" Key="menu2-open-btn-1.png" />
+            <PlistImageFile Name="miner-face-normal.png" Key="miner-face-normal.png" />
+            <PlistImageFile Name="miner-face-smile.png" Key="miner-face-smile.png" />
+            <PlistImageFile Name="miner-face-whistle-0.png" Key="miner-face-whistle-0.png" />
+            <PlistImageFile Name="miner-face-whistle-1.png" Key="miner-face-whistle-1.png" />
+            <PlistImageFile Name="miner-face-whistle-2.png" Key="miner-face-whistle-2.png" />
+            <PlistImageFile Name="miner-leg-0.png" Key="miner-leg-0.png" />
+            <PlistImageFile Name="miner-leg-1.png" Key="miner-leg-1.png" />
+            <PlistImageFile Name="miner-leg-2.png" Key="miner-leg-2.png" />
+            <PlistImageFile Name="more-game-btn-1.png" Key="more-game-btn-1.png" />
+            <PlistImageFile Name="more-game-btn-2.png" Key="more-game-btn-2.png" />
+            <PlistImageFile Name="music-off-btn-0.png" Key="music-off-btn-0.png" />
+            <PlistImageFile Name="music-off-btn-1.png" Key="music-off-btn-1.png" />
+            <PlistImageFile Name="music-on-btn-0.png" Key="music-on-btn-0.png" />
+            <PlistImageFile Name="music-on-btn-1.png" Key="music-on-btn-1.png" />
+            <PlistImageFile Name="next-btn-0.png" Key="next-btn-0.png" />
+            <PlistImageFile Name="next-btn-1.png" Key="next-btn-1.png" />
+            <PlistImageFile Name="night-btn-0.png" Key="night-btn-0.png" />
+            <PlistImageFile Name="night-btn-1.png" Key="night-btn-1.png" />
+            <PlistImageFile Name="option-btn-0.png" Key="option-btn-0.png" />
+            <PlistImageFile Name="option-btn-1.png" Key="option-btn-1.png" />
+            <PlistImageFile Name="pause-btn-0.png" Key="pause-btn-0.png" />
+            <PlistImageFile Name="pause-btn-1.png" Key="pause-btn-1.png" />
+            <PlistImageFile Name="random-btn-0.png" Key="random-btn-0.png" />
+            <PlistImageFile Name="random-btn-1.png" Key="random-btn-1.png" />
+            <PlistImageFile Name="rank-0.png" Key="rank-0.png" />
+            <PlistImageFile Name="rank-1.png" Key="rank-1.png" />
+            <PlistImageFile Name="rate-btn-1.png" Key="rate-btn-1.png" />
+            <PlistImageFile Name="rate-btn-2.png" Key="rate-btn-2.png" />
+            <PlistImageFile Name="rock-collectors-book.png" Key="rock-collectors-book.png" />
+            <PlistImageFile Name="russian-btn-0.png" Key="russian-btn-0.png" />
+            <PlistImageFile Name="russian-btn-1.png" Key="russian-btn-1.png" />
+            <PlistImageFile Name="sound-off-btn-0.png" Key="sound-off-btn-0.png" />
+            <PlistImageFile Name="sound-off-btn-1.png" Key="sound-off-btn-1.png" />
+            <PlistImageFile Name="sound-on-btn-0.png" Key="sound-on-btn-0.png" />
+            <PlistImageFile Name="sound-on-btn-1.png" Key="sound-on-btn-1.png" />
+            <PlistImageFile Name="start-0.png" Key="start-0.png" />
+            <PlistImageFile Name="start-1.png" Key="start-1.png" />
+            <PlistImageFile Name="strength.png" Key="strength.png" />
+            <PlistImageFile Name="strength-drink.png" Key="strength-drink.png" />
+            <PlistImageFile Name="thai-btn-0.png" Key="thai-btn-0.png" />
+            <PlistImageFile Name="thai-btn-1.png" Key="thai-btn-1.png" />
+            <PlistImageFile Name="turkish-btn-0.png" Key="turkish-btn-0.png" />
+            <PlistImageFile Name="turkish-btn-1.png" Key="turkish-btn-1.png" />
+            <PlistImageFile Name="vietnamese-btn-0.png" Key="vietnamese-btn-0.png" />
+            <PlistImageFile Name="vietnamese-btn-1.png" Key="vietnamese-btn-1.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="level-sheet.png" PListFile="level-sheet.plist" Name=".level-sheet_PList.Dir">
+            <PlistImageFile Name="bone.png" Key="bone.png" />
+            <PlistImageFile Name="bone-0.png" Key="bone-0.png" />
+            <PlistImageFile Name="bone-1.png" Key="bone-1.png" />
+            <PlistImageFile Name="bone-2.png" Key="bone-2.png" />
+            <PlistImageFile Name="claw-0.png" Key="claw-0.png" />
+            <PlistImageFile Name="claw-1.png" Key="claw-1.png" />
+            <PlistImageFile Name="claw-2.png" Key="claw-2.png" />
+            <PlistImageFile Name="clouds-0.png" Key="clouds-0.png" />
+            <PlistImageFile Name="clouds-1.png" Key="clouds-1.png" />
+            <PlistImageFile Name="clouds-night.png" Key="clouds-night.png" />
+            <PlistImageFile Name="clouds-night-0.png" Key="clouds-night-0.png" />
+            <PlistImageFile Name="coconuts.png" Key="coconuts.png" />
+            <PlistImageFile Name="coconuts-night.png" Key="coconuts-night.png" />
+            <PlistImageFile Name="diamond-0.png" Key="diamond-0.png" />
+            <PlistImageFile Name="diamond-1.png" Key="diamond-1.png" />
+            <PlistImageFile Name="diamond-2.png" Key="diamond-2.png" />
+            <PlistImageFile Name="diamond-3.png" Key="diamond-3.png" />
+            <PlistImageFile Name="diamond-4.png" Key="diamond-4.png" />
+            <PlistImageFile Name="diamond-5.png" Key="diamond-5.png" />
+            <PlistImageFile Name="diamond-6.png" Key="diamond-6.png" />
+            <PlistImageFile Name="dolphin-0.png" Key="dolphin-0.png" />
+            <PlistImageFile Name="dolphin-1.png" Key="dolphin-1.png" />
+            <PlistImageFile Name="dolphin-10.png" Key="dolphin-10.png" />
+            <PlistImageFile Name="dolphin-11.png" Key="dolphin-11.png" />
+            <PlistImageFile Name="dolphin-12.png" Key="dolphin-12.png" />
+            <PlistImageFile Name="dolphin-13.png" Key="dolphin-13.png" />
+            <PlistImageFile Name="dolphin-14.png" Key="dolphin-14.png" />
+            <PlistImageFile Name="dolphin-2.png" Key="dolphin-2.png" />
+            <PlistImageFile Name="dolphin-3.png" Key="dolphin-3.png" />
+            <PlistImageFile Name="dolphin-4.png" Key="dolphin-4.png" />
+            <PlistImageFile Name="dolphin-5.png" Key="dolphin-5.png" />
+            <PlistImageFile Name="dolphin-6.png" Key="dolphin-6.png" />
+            <PlistImageFile Name="dolphin-7.png" Key="dolphin-7.png" />
+            <PlistImageFile Name="dolphin-8.png" Key="dolphin-8.png" />
+            <PlistImageFile Name="dolphin-9.png" Key="dolphin-9.png" />
+            <PlistImageFile Name="gem-mouse-0.png" Key="gem-mouse-0.png" />
+            <PlistImageFile Name="gem-mouse-1.png" Key="gem-mouse-1.png" />
+            <PlistImageFile Name="gem-mouse-2.png" Key="gem-mouse-2.png" />
+            <PlistImageFile Name="gem-mouse-3.png" Key="gem-mouse-3.png" />
+            <PlistImageFile Name="gem-mouse-4.png" Key="gem-mouse-4.png" />
+            <PlistImageFile Name="gem-mouse-5.png" Key="gem-mouse-5.png" />
+            <PlistImageFile Name="gem-mouse-6.png" Key="gem-mouse-6.png" />
+            <PlistImageFile Name="gem-mouse-7.png" Key="gem-mouse-7.png" />
+            <PlistImageFile Name="goal-money-banner.png" Key="goal-money-banner.png" />
+            <PlistImageFile Name="goal-money-banner-night.png" Key="goal-money-banner-night.png" />
+            <PlistImageFile Name="goal-symbol.png" Key="goal-symbol.png" />
+            <PlistImageFile Name="gold-0-0.png" Key="gold-0-0.png" />
+            <PlistImageFile Name="gold-0-1.png" Key="gold-0-1.png" />
+            <PlistImageFile Name="gold-0-2.png" Key="gold-0-2.png" />
+            <PlistImageFile Name="gold-0-3.png" Key="gold-0-3.png" />
+            <PlistImageFile Name="gold-0-4.png" Key="gold-0-4.png" />
+            <PlistImageFile Name="gold-0-5.png" Key="gold-0-5.png" />
+            <PlistImageFile Name="gold-0-6.png" Key="gold-0-6.png" />
+            <PlistImageFile Name="gold-1-0.png" Key="gold-1-0.png" />
+            <PlistImageFile Name="gold-1-1.png" Key="gold-1-1.png" />
+            <PlistImageFile Name="gold-1-2.png" Key="gold-1-2.png" />
+            <PlistImageFile Name="gold-1-3.png" Key="gold-1-3.png" />
+            <PlistImageFile Name="gold-1-4.png" Key="gold-1-4.png" />
+            <PlistImageFile Name="gold-1-5.png" Key="gold-1-5.png" />
+            <PlistImageFile Name="gold-1-6.png" Key="gold-1-6.png" />
+            <PlistImageFile Name="helicopter-0.png" Key="helicopter-0.png" />
+            <PlistImageFile Name="helicopter-1.png" Key="helicopter-1.png" />
+            <PlistImageFile Name="helicopter-2.png" Key="helicopter-2.png" />
+            <PlistImageFile Name="helicopter-3.png" Key="helicopter-3.png" />
+            <PlistImageFile Name="high-score.png" Key="high-score.png" />
+            <PlistImageFile Name="high-score-1.png" Key="high-score-1.png" />
+            <PlistImageFile Name="leaves-0.png" Key="leaves-0.png" />
+            <PlistImageFile Name="leaves-0-night.png" Key="leaves-0-night.png" />
+            <PlistImageFile Name="leaves-1.png" Key="leaves-1.png" />
+            <PlistImageFile Name="leaves-1-night.png" Key="leaves-1-night.png" />
+            <PlistImageFile Name="leaves-2.png" Key="leaves-2.png" />
+            <PlistImageFile Name="leaves-2-night.png" Key="leaves-2-night.png" />
+            <PlistImageFile Name="level-time-banner.png" Key="level-time-banner.png" />
+            <PlistImageFile Name="level-time-banner-night.png" Key="level-time-banner-night.png" />
+            <PlistImageFile Name="mouse-0.png" Key="mouse-0.png" />
+            <PlistImageFile Name="mouse-1.png" Key="mouse-1.png" />
+            <PlistImageFile Name="mouse-2.png" Key="mouse-2.png" />
+            <PlistImageFile Name="mouse-3.png" Key="mouse-3.png" />
+            <PlistImageFile Name="mouse-4.png" Key="mouse-4.png" />
+            <PlistImageFile Name="mouse-5.png" Key="mouse-5.png" />
+            <PlistImageFile Name="mouse-6.png" Key="mouse-6.png" />
+            <PlistImageFile Name="mouse-7.png" Key="mouse-7.png" />
+            <PlistImageFile Name="owl.png" Key="owl.png" />
+            <PlistImageFile Name="owl-eye-0.png" Key="owl-eye-0.png" />
+            <PlistImageFile Name="owl-eye-1.png" Key="owl-eye-1.png" />
+            <PlistImageFile Name="owl-eye-2.png" Key="owl-eye-2.png" />
+            <PlistImageFile Name="owl-eye-3.png" Key="owl-eye-3.png" />
+            <PlistImageFile Name="owl-eye-4.png" Key="owl-eye-4.png" />
+            <PlistImageFile Name="owl-eye-5.png" Key="owl-eye-5.png" />
+            <PlistImageFile Name="owl-eye-6.png" Key="owl-eye-6.png" />
+            <PlistImageFile Name="owl-eye-7.png" Key="owl-eye-7.png" />
+            <PlistImageFile Name="owl-eye-8.png" Key="owl-eye-8.png" />
+            <PlistImageFile Name="pulled-diamond-0.png" Key="pulled-diamond-0.png" />
+            <PlistImageFile Name="pulled-diamond-1.png" Key="pulled-diamond-1.png" />
+            <PlistImageFile Name="pulled-diamond-2.png" Key="pulled-diamond-2.png" />
+            <PlistImageFile Name="pulled-diamond-3.png" Key="pulled-diamond-3.png" />
+            <PlistImageFile Name="pulled-diamond-4.png" Key="pulled-diamond-4.png" />
+            <PlistImageFile Name="pulled-diamond-5.png" Key="pulled-diamond-5.png" />
+            <PlistImageFile Name="pulled-diamond-6.png" Key="pulled-diamond-6.png" />
+            <PlistImageFile Name="pulled-gem-mouse-0.png" Key="pulled-gem-mouse-0.png" />
+            <PlistImageFile Name="pulled-gem-mouse-1.png" Key="pulled-gem-mouse-1.png" />
+            <PlistImageFile Name="pulled-gem-mouse-2.png" Key="pulled-gem-mouse-2.png" />
+            <PlistImageFile Name="pulled-gem-mouse-3.png" Key="pulled-gem-mouse-3.png" />
+            <PlistImageFile Name="pulled-gem-mouse-4.png" Key="pulled-gem-mouse-4.png" />
+            <PlistImageFile Name="pulled-gem-mouse-5.png" Key="pulled-gem-mouse-5.png" />
+            <PlistImageFile Name="pulled-gem-mouse-6.png" Key="pulled-gem-mouse-6.png" />
+            <PlistImageFile Name="pulled-gem-mouse-7.png" Key="pulled-gem-mouse-7.png" />
+            <PlistImageFile Name="pulled-gold-0-0.png" Key="pulled-gold-0-0.png" />
+            <PlistImageFile Name="pulled-gold-0-1.png" Key="pulled-gold-0-1.png" />
+            <PlistImageFile Name="pulled-gold-0-2.png" Key="pulled-gold-0-2.png" />
+            <PlistImageFile Name="pulled-gold-0-3.png" Key="pulled-gold-0-3.png" />
+            <PlistImageFile Name="pulled-gold-0-4.png" Key="pulled-gold-0-4.png" />
+            <PlistImageFile Name="pulled-gold-0-5.png" Key="pulled-gold-0-5.png" />
+            <PlistImageFile Name="pulled-gold-0-6.png" Key="pulled-gold-0-6.png" />
+            <PlistImageFile Name="pulled-gold-1-0.png" Key="pulled-gold-1-0.png" />
+            <PlistImageFile Name="pulled-gold-1-1.png" Key="pulled-gold-1-1.png" />
+            <PlistImageFile Name="pulled-gold-1-2.png" Key="pulled-gold-1-2.png" />
+            <PlistImageFile Name="pulled-gold-1-3.png" Key="pulled-gold-1-3.png" />
+            <PlistImageFile Name="pulled-gold-1-4.png" Key="pulled-gold-1-4.png" />
+            <PlistImageFile Name="pulled-gold-1-5.png" Key="pulled-gold-1-5.png" />
+            <PlistImageFile Name="pulled-gold-1-6.png" Key="pulled-gold-1-6.png" />
+            <PlistImageFile Name="rope.png" Key="rope.png" />
+            <PlistImageFile Name="skull.png" Key="skull.png" />
+            <PlistImageFile Name="soil-0.png" Key="soil-0.png" />
+            <PlistImageFile Name="soil-1.png" Key="soil-1.png" />
+            <PlistImageFile Name="stone-0.png" Key="stone-0.png" />
+            <PlistImageFile Name="stone-1.png" Key="stone-1.png" />
+            <PlistImageFile Name="TNT.png" Key="TNT.png" />
+            <PlistImageFile Name="TNT-fragment.png" Key="TNT-fragment.png" />
+            <PlistImageFile Name="treasure-bag.png" Key="treasure-bag.png" />
+          </PlistImageFolder>
+          <Image Name="dialog-background.png" />
+          <Image Name="general-sheet.png" />
+          <Image Name="gold-miner-text.png" />
+          <Image Name="level-background-0.jpg" />
+          <Image Name="level-sheet.png" />
+          <Image Name="menu-background.png" />
+          <Image Name="menu-background-sky.jpg" />
+          <Image Name="menu-miner.png" />
+          <Image Name="menu-start-gold.png" />
+          <Image Name="shop-background.jpg" />
+          <Image Name="shop-desk.png" />
+        </Folder>
+        <Project Name="menu.csd" Type="Layer" />
+        <Project Name="menuSetting.csd" Type="Layer" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

@@ -2,8 +2,11 @@
 #include "GameSetting.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "SimpleAudioEngine.h"
+#include "MainGame.h"
 
 USING_NS_CC;
+using namespace CocosDenshion;
 
 using namespace cocostudio::timeline;
 
@@ -31,6 +34,15 @@ bool GameMenu::init()
     {
         return false;
     }
+
+	bool isPlayEffect = UserDefault::getInstance()->getBoolForKey("isPlayEffect", true);
+	bool isPlayBgMusic = UserDefault::getInstance()->getBoolForKey("isPlayBgMusic", true);
+	
+	if (isPlayBgMusic)
+	{
+		SimpleAudioEngine::getInstance()->playBackgroundMusic("sound/menu-bg.wav", true);
+	}
+
 	settingIsShow = false;
 
     auto sysMenu = CSLoader::createNode("menu.csb");
@@ -51,6 +63,19 @@ bool GameMenu::init()
 
 	btnSetting = static_cast<Button*>(Helper::seekWidgetByName(static_cast<Layout*>(sysMenu), "btnSetting"));
 	btnSetting->addTouchEventListener(CC_CALLBACK_2(GameMenu::showSetting, this));
+
+	auto gameStart = static_cast<Button*>(Helper::seekWidgetByName(static_cast<Layout*>(sysMenu), "gameStart"));
+	gameStart->addTouchEventListener(
+		[=](Ref* pSender, Widget::TouchEventType type)
+	{
+		if (Widget::TouchEventType::ENDED == type)
+		{
+
+			auto mainGame = MainGame::createScene();
+			Director::getInstance()->replaceScene(mainGame);
+		}
+	}
+	);
 
     return true;
 }

@@ -35,7 +35,6 @@ private:
 	Button* btnNewbie;
 	Button* btnAbout;
 
-
 	Vec2 size;
 };
 

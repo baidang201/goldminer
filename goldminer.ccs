@@ -235,6 +235,9 @@
         </Folder>
         <Project Name="menu.csd" Type="Layer" />
         <Project Name="menuSetting.csd" Type="Layer" />
+        <Project Name="level1.csd" Type="Layer" />
+        <Project Name="level2.csd" Type="Layer" />
+        <Project Name="leveltop.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

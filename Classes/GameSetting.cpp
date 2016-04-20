@@ -1,10 +1,12 @@
 #include "GameSetting.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
+using namespace CocosDenshion;
 
 Scene* GameSetting::createScene()
 {
@@ -71,7 +73,23 @@ void GameSetting::toggleEffect(Ref * pSender, Widget::TouchEventType type)
 {
 	if (Widget::TouchEventType::ENDED == type)
 	{
+		bool isPlayEffect = UserDefault::getInstance()->getBoolForKey("isPlayEffect", true);
+		if (!isPlayEffect)
+		{
+			//play
+			btnEffect->loadTextureNormal("sound-on-btn-0.png", Widget::TextureResType::PLIST);
+			btnEffect->loadTexturePressed("sound-on-btn-0.png", Widget::TextureResType::PLIST);
+		}
+		else
+		{
+			//pause
+			SimpleAudioEngine::getInstance()->stopAllEffects();
 
+			btnEffect->loadTextureNormal("sound-off-btn-0.png", Widget::TextureResType::PLIST);
+			btnEffect->loadTexturePressed("sound-off-btn-0.png", Widget::TextureResType::PLIST);
+		}
+		isPlayEffect = !isPlayEffect;
+		UserDefault::getInstance()->setBoolForKey("isPlayEffect", isPlayEffect);
 	}
 }
 
@@ -79,7 +97,21 @@ void GameSetting::toggleBgMusic(Ref * pSender, Widget::TouchEventType type)
 {
 	if (Widget::TouchEventType::ENDED == type)
 	{
-
+		bool isPlayBgMusic = UserDefault::getInstance()->getBoolForKey("isPlayBgMusic", true);
+		if (!isPlayBgMusic)
+		{
+			SimpleAudioEngine::getInstance()->playBackgroundMusic("sound/menu-bg.wav", true);
+			btnBgMusic->loadTextureNormal("music-on-btn-0.png", Widget::TextureResType::PLIST);
+			btnBgMusic->loadTexturePressed("music-on-btn-0.png", Widget::TextureResType::PLIST);
+		}
+		else
+		{
+			SimpleAudioEngine::getInstance()->stopBackgroundMusic();
+			btnBgMusic->loadTextureNormal("music-off-btn-0.png", Widget::TextureResType::PLIST);
+			btnBgMusic->loadTexturePressed("music-off-btn-0.png", Widget::TextureResType::PLIST);
+		}
+		isPlayBgMusic = !isPlayBgMusic;
+		UserDefault::getInstance()->setBoolForKey("isPlayBgMusic", isPlayBgMusic);
 	}
 }
 

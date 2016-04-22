@@ -242,6 +242,7 @@
         <Project Name="menu.csd" Type="Layer" />
         <Project Name="menuSetting.csd" Type="Layer" />
         <Project Name="starttips.csd" Type="Layer" />
+        <Project Name="claw.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

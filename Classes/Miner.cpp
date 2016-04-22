@@ -36,6 +36,11 @@ bool Miner::init()
 
 	miner = SkeletonAnimation::createWithFile("iphonehd/miner.json", "iphonehd/miner.atlas", 0.6);
 	addChild(miner);
+	
+	//Ìí¼Ó¹³×Ó
+	auto claw = CSLoader::createNode("claw.csb");
+	claw->setPosition(Vec2(-7, 52));
+	addChild(claw, 2);
 
     return true;
 }

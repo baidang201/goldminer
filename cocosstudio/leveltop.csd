@@ -2,7 +2,32 @@
   <PropertyGroup Name="leveltop" Type="Layer" ID="b5716d1a-656e-4681-b688-79e5bf5b7b24" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="0" Speed="1.0000" />
+      <Animation Duration="30" Speed="1.0000">
+        <Timeline ActionTag="778896946" Property="Position">
+          <PointFrame FrameIndex="0" X="778.7518" Y="711.8566">
+            <EasingData Type="0" />
+          </PointFrame>
+          <PointFrame FrameIndex="30" X="778.4538" Y="574.2537">
+            <EasingData Type="0" />
+          </PointFrame>
+        </Timeline>
+        <Timeline ActionTag="778896946" Property="Scale">
+          <ScaleFrame FrameIndex="0" X="1.0000" Y="1.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="30" X="1.0000" Y="1.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+        </Timeline>
+        <Timeline ActionTag="778896946" Property="RotationSkew">
+          <ScaleFrame FrameIndex="0" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="30" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+        </Timeline>
+      </Animation>
       <ObjectData Name="Layer" Tag="62" ctype="GameLayerObjectData">
         <Size X="960.0000" Y="640.0000" />
         <Children>
@@ -40,7 +65,7 @@
             <PreSize X="0.1656" Y="0.2469" />
             <FileData Type="PlistSubImage" Path="goal-money-banner.png" Plist="iphonehd/level-sheet.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_2" ActionTag="778896946" Tag="64" IconVisible="False" LeftMargin="712.2518" RightMargin="114.7482" TopMargin="-135.3566" BottomMargin="648.3566" LeftEage="43" RightEage="43" TopEage="41" BottomEage="41" Scale9OriginX="43" Scale9OriginY="41" Scale9Width="47" Scale9Height="45" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_2" ActionTag="778896946" Tag="64" IconVisible="False" LeftMargin="711.9538" RightMargin="115.0462" TopMargin="2.2463" BottomMargin="510.7537" LeftEage="43" RightEage="43" TopEage="41" BottomEage="41" Scale9OriginX="43" Scale9OriginY="41" Scale9Width="47" Scale9Height="45" ctype="ImageViewObjectData">
             <Size X="133.0000" Y="127.0000" />
             <Children>
               <AbstractNodeData Name="curLevel" ActionTag="816500134" Tag="66" IconVisible="False" LeftMargin="95.5431" RightMargin="27.4569" TopMargin="36.5635" BottomMargin="70.4365" FontSize="20" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -67,10 +92,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="778.7518" Y="711.8566" />
+            <Position X="778.4538" Y="574.2537" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8112" Y="1.1123" />
+            <PrePosition X="0.8109" Y="0.8973" />
             <PreSize X="0.1385" Y="0.1984" />
             <FileData Type="PlistSubImage" Path="level-time-banner.png" Plist="iphonehd/level-sheet.plist" />
           </AbstractNodeData>

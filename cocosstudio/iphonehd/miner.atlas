@@ -1,0 +1,20 @@
+
+miner.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+miner-cart
+  rotate: true
+  xy: 2, 2
+  size: 239, 261
+  orig: 239, 261
+  offset: 0, 0
+  index: -1
+wheel
+  rotate: false
+  xy: 265, 197
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1

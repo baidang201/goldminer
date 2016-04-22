@@ -150,6 +150,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\GameMenu.cpp" />
     <ClCompile Include="..\Classes\GameSetting.cpp" />
     <ClCompile Include="..\Classes\MainGame.cpp" />
+    <ClCompile Include="..\Classes\Miner.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +158,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\GameMenu.h" />
     <ClInclude Include="..\Classes\GameSetting.h" />
     <ClInclude Include="..\Classes\MainGame.h" />
+    <ClInclude Include="..\Classes\Miner.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

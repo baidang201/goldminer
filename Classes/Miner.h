@@ -1,15 +1,15 @@
-#ifndef __MainGame_SCENE_H__
-#define __MainGame_SCENE_H__
+#ifndef __Miner_SCENE_H__
+#define __Miner_SCENE_H__
 
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-#include "Miner.h"
+#include "spine/spine-cocos2dx.h"
 
 using namespace cocos2d::ui;
-using namespace cocostudio::timeline;
+using namespace spine;
 
-class MainGame : public cocos2d::Layer
+class Miner : public cocos2d::Layer
 {
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -19,20 +19,12 @@ public:
     virtual bool init();
 
     // implement the "static create()" method manually
-    CREATE_FUNC(MainGame);
+    CREATE_FUNC(Miner);
 
+	void runAppear();
 private:
-	int igoalCoin;
 
-	Text* goalCoin;
-	Text* curCoin;
-	Text* curLevel;
-	Text* timeDown;
-
-	Button* btnPause;
-
-	Miner* miner;
-	ActionTimeline* aniTimeDowm;
+	SkeletonAnimation* miner;
 };
 
-#endif // __MainGame_SCENE_H__
+#endif // __Miner_SCENE_H__

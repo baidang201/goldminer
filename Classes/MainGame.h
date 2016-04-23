@@ -6,6 +6,7 @@
 #include "ui/CocosGUI.h"
 #include "Miner.h"
 
+USING_NS_CC;
 using namespace cocos2d::ui;
 using namespace cocostudio::timeline;
 
@@ -20,6 +21,8 @@ public:
 
     // implement the "static create()" method manually
     CREATE_FUNC(MainGame);
+
+	virtual bool OnTouchBegan(Touch* touch, Event event);
 
 private:
 	int igoalCoin;

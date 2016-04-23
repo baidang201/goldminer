@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="51" ctype="GameLayerObjectData">
         <Size X="3.0000" Y="20.0000" />
         <Children>
-          <AbstractNodeData Name="rope" ActionTag="-2058834497" Tag="52" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TopEage="6" BottomEage="6" Scale9OriginY="6" Scale9Width="3" Scale9Height="8" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="rope" ActionTag="-2058834497" Tag="52" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" Scale9Enable="True" LeftEage="1" RightEage="1" TopEage="2" BottomEage="2" Scale9OriginX="1" Scale9OriginY="2" Scale9Width="1" Scale9Height="16" ctype="ImageViewObjectData">
             <Size X="3.0000" Y="20.0000" />
             <Children>
               <AbstractNodeData Name="clawAxis" ActionTag="-1713134815" Tag="53" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-4.5000" RightMargin="-4.5000" TopMargin="14.0000" BottomMargin="-6.0000" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="6" Scale9Height="6" ctype="ImageViewObjectData">

@@ -22,9 +22,29 @@ public:
     CREATE_FUNC(Miner);
 
 	void runAppear();
+
+	void runShakeClaw();
+
+	void stopShakeActions();
+
+	bool isRopeChanging();
+
+	void runRopeThrow();
+	void runRopePull();
+
 private:
 
+	void addRopeHeight(float delate);
+	void reduceRopeHeight(float delate);
+
 	SkeletonAnimation* miner;
+
+	ImageView* rope;
+	ImageView* clawAxis;
+
+	bool _isRopeChanging;
+
+	int ropeHeight;
 };
 
 #endif // __Miner_SCENE_H__

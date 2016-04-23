@@ -32,6 +32,9 @@ bool Miner::init()
         return false;
     }
 	
+	_isRopeChanging = false;
+	ropeHeight = 20;
+
 	Size size = Director::getInstance()->getVisibleSize();
 
 	miner = SkeletonAnimation::createWithFile("iphonehd/miner.json", "iphonehd/miner.atlas", 0.6);
@@ -39,8 +42,17 @@ bool Miner::init()
 	
 	//Ìí¼Ó¹³×Ó
 	auto claw = CSLoader::createNode("claw.csb");
-	claw->setPosition(Vec2(-7, 52));
+	claw->setPosition(Vec2(0, -35));
 	addChild(claw, 2);
+		
+	rope = static_cast<ImageView*>( Helper::seekWidgetByName(static_cast<Layout*>(claw), "rope") );
+	clawAxis = static_cast<ImageView*>(Helper::seekWidgetByName(static_cast<Layout*>(claw), "clawAxis"));
+
+	PhysicsBody* body = PhysicsBody::createCircle(6);
+	body->setCategoryBitmask(10);
+	body->setCollisionBitmask(10);
+	body->setContactTestBitmask(10);
+	clawAxis->setPhysicsBody(body);
 
     return true;
 }
@@ -49,5 +61,68 @@ void Miner::runAppear()
 {
 	miner->addAnimation(0, "walk", true, 0);
 	miner->addAnimation(0, "wait", false, 2);
+}
+
+void Miner::runShakeClaw()
+{
+	rope->setRotation(0);
+	auto seq = Sequence::create(
+		RotateBy::create(1.2, -80),
+		RotateBy::create(2.4, 160),
+		RotateBy::create(1.2, -80),
+		NULL
+	);
+	rope->runAction(RepeatForever::create(seq));
+}
+
+void Miner::stopShakeActions()
+{
+	rope->stopAllActions();
+}
+
+bool Miner::isRopeChanging()
+{
+	return _isRopeChanging;
+}
+
+void Miner::runRopeThrow()
+{
+	_isRopeChanging = true;
+	schedule(schedule_selector(Miner::addRopeHeight), 0.025);
+}
+
+void Miner::runRopePull()
+{
+	unschedule(schedule_selector(Miner::addRopeHeight));
+	_isRopeChanging = true;
+	clawAxis->setPhysicsBody(NULL);
+	schedule(schedule_selector(Miner::reduceRopeHeight), 0.025);
+}
+
+void Miner::addRopeHeight(float delate)
+{
+	ropeHeight += 10;
+	rope->setSize(Size(3, ropeHeight));
+
+	PhysicsBody* body = PhysicsBody::createCircle(6);
+	body->setCategoryBitmask(10);
+	body->setCollisionBitmask(10);
+	body->setContactTestBitmask(10);
+	clawAxis->setPhysicsBody(body);
+}
+
+void Miner::reduceRopeHeight(float delate)
+{
+	if (ropeHeight <= 20)
+	{
+		unschedule(schedule_selector(Miner::reduceRopeHeight));
+		ropeHeight = 20;
+		rope->setSize(Size(3, ropeHeight));
+		_isRopeChanging = false;
+		return;
+	}
+
+	ropeHeight -= 10;
+	rope->setSize(Size(3, ropeHeight));
 }
 

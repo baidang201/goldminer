@@ -8,13 +8,32 @@ USING_NS_CC;
 using namespace CocosDenshion;
 using namespace cocostudio::timeline;
 
+#define WORLDTAG 100
+
 Scene* MainGame::createScene()
 {
     // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
+    auto scene = Scene::createWithPhysics();//创建物理世界    
+	PhysicsWorld* word = scene->getPhysicsWorld();
+	word->setGravity(Vec2::ZERO);//设置二维两个方向重力为0，0
+	word->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+
     // 'layer' is an autorelease object
     auto layer = MainGame::create();
+
+	Size size = Director::getInstance()->getWinSize();
+	PhysicsBody* body = PhysicsBody::createEdgeBox(size);//创建边界
+	//设置碰撞掩码
+	//body->setCategoryBitmask(10);
+	//body->setCollisionBitmask(10);
+	//body->setContactTestBitmask(10);
+
+	Node* node = Node::create();
+	node->setPosition(size/2);
+	node->setPhysicsBody(body);//物理世界的body和cocos世界的node绑定
+	node->setTag(WORLDTAG);
+	scene->addChild(node);
+
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -40,6 +59,7 @@ bool MainGame::init()
 	}
 
 	Size size = Director::getInstance()->getVisibleSize();
+	setTouchEnabled(true);
 
 	auto level = CSLoader::createNode("level1.csb");
 	addChild(level);
@@ -73,7 +93,7 @@ bool MainGame::init()
 
 	//黄金矿工
 	miner = Miner::create();
-	addChild(miner);
+	addChild(miner, 20);
 	miner->setPosition(size.width + 100, size.height - 110);
 
 	//增加游戏关卡提示 
@@ -90,6 +110,7 @@ bool MainGame::init()
 	Text* goalNode = static_cast<Text*> (Helper::seekWidgetByName(static_cast<Layout*>(starttips), "goalNode"));
 	auto goalSymbol = Helper::seekWidgetByName(static_cast<Layout*>(starttips), "goalSymbol");
 
+	//等级提示文本入场
 	auto aniLevelNode = Sequence::create(
 		EaseBackInOut::create( MoveTo::create(1, Vec2(Director::getInstance()->getVisibleSize().width/ 2 - 10, 430))),
 		DelayTime::create(1),
@@ -98,6 +119,7 @@ bool MainGame::init()
 		NULL);
 	levelNode->runAction(aniLevelNode);
 
+	//得分提示图片入场
 	auto anigoalSymbol = Sequence::create(
 		EaseBackInOut::create(MoveTo::create(1, Vec2(Director::getInstance()->getVisibleSize().width / 2 - 150, 250))),
 		DelayTime::create(1),
@@ -106,6 +128,7 @@ bool MainGame::init()
 		NULL);
 	goalSymbol->runAction(anigoalSymbol);
 
+	//得分提示文本入场
 	auto anigoalNode = Sequence::create(
 		EaseBackInOut::create(MoveTo::create(1, Vec2(Director::getInstance()->getVisibleSize().width / 2 + 10, 250))),
 		DelayTime::create(1),
@@ -123,7 +146,22 @@ bool MainGame::init()
 					CallFuncN::create(
 						[=](Ref* pSender) 
 						{
-							aniTimeDowm->gotoFrameAndPlay(0, 60, false);
+							aniTimeDowm->gotoFrameAndPlay(0, 60, false);//时间控件入场
+							miner->runShakeClaw();//钩子左右摆动
+
+							//添加放钩子屏幕监听事件
+							auto listener = EventListenerTouchOneByOne::create();
+							listener->onTouchBegan = [=](Touch* touch, Event* event) 
+							{
+								if (!miner->isRopeChanging())//不伸长的时候，进行伸长
+								{
+									miner->stopShakeActions();
+									miner->runRopeThrow();									
+								}
+
+								return true;
+							};
+							_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 						}
 					),
 					NULL));
@@ -132,9 +170,27 @@ bool MainGame::init()
 	goalNode->runAction(anigoalNode);
 
 
-
-
+	//创建碰撞事件监听
+	auto physicListener = EventListenerPhysicsContact::create();
+	physicListener->onContactBegin = [=](PhysicsContact& contact)
+	{
+		//拉绳子动作	
+		miner->runRopePull();
+		return true;
+	};
+	_eventDispatcher->addEventListenerWithFixedPriority(physicListener, 1);
 
     return true;
+}
+
+bool MainGame::OnTouchBegan(Touch * touch, Event event)
+{
+	if (!miner->isRopeChanging())//不伸长的时候，进行伸长
+	{
+		miner->stopShakeActions();
+		miner->runRopeThrow();
+	}
+
+	return true;
 }
 

@@ -5,6 +5,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "spine/spine-cocos2dx.h"
+#include "Gold.h"
 
 using namespace cocos2d::ui;
 using namespace spine;
@@ -34,6 +35,8 @@ public:
 	void runClawClose();
 	void runClawOpen();
 
+	void addGold(std::string type);
+
 private:
 
 	void addRopeHeight(float delate);
@@ -49,6 +52,7 @@ private:
 	bool _isRopeChanging;
 
 	int ropeHeight;
+	Gold* _gold;
 };
 
 #endif // __Miner_SCENE_H__

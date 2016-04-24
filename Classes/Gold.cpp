@@ -5,34 +5,77 @@
 #include "spine\spine-cocos2dx.h"
 
 USING_NS_CC;
-using namespace spine;
 
-Scene* Gold::createScene()
+Gold * Gold::create(std::string type)
 {
-    // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
-    // 'layer' is an autorelease object
-    auto layer = Gold::create();
-
-    // add layer as a child to scene
-    scene->addChild(layer);
-
-    // return the scene
-    return scene;
+	Gold* gold = new Gold();
+	if (gold && gold->init(type))
+	{
+		gold->autorelease();
+		return gold;
+	}
+	delete gold;
+	gold = nullptr;
+	return nullptr;
 }
 
-// on "init" you need to initialize your instance
-bool Gold::init()
-{    
-    //////////////////////////////
-    // 1. super init first
-    if ( !Layer::init() )
-    {
-        return false;
-    }
-	
-	
-    return true;
+bool Gold::init(std::string type)
+{
+	if (type == "smallgold")
+	{
+		if (!initWithSpriteFrameName("gold-0-0.png"))
+		{
+			return false;
+		}
+		setScale(0.3);
+		weight = 3;
+	}
+	else if (type == "middlegold")
+	{
+		if (!initWithSpriteFrameName("gold-0-0.png"))
+		{
+			return false;
+		}
+		setScale(0.5);
+		weight = 4;
+	}
+	else if (type == "biggold")
+	{
+		if (!initWithSpriteFrameName("gold-1-0.png"))
+		{
+			return false;
+		}
+		weight = 5;
+	}
+	else if (type == "smallstone")
+	{
+		if (!initWithSpriteFrameName("stone-0.png"))
+		{
+			return false;
+		}
+		setScale(0.5);
+		weight = 7;
+	}
+	else if (type == "bigstone")
+	{
+		if (!initWithSpriteFrameName("stone-1.png"))
+		{
+			return false;
+		}
+		weight = 8;
+	}
+	else if (type == "bag")
+	{
+		if (!initWithSpriteFrameName("treasure-bag.png"))
+		{
+			return false;
+		}
+		weight = 1;
+	}
+	return true;
 }
 
+int Gold::getWeight()
+{
+	return weight;
+}

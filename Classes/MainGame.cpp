@@ -204,6 +204,8 @@ bool MainGame::init()
 		if (shapb->getTag() != WORLDTAG)//抓到的是金块 石头
 		{
 			miner->runClawClose();
+			miner->addGold(shapb->getName());
+			shapb->removeFromParent();			
 		}
 
 		//拉绳子动作	

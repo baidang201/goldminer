@@ -54,6 +54,9 @@ bool Miner::init()
 	body->setContactTestBitmask(10);
 	clawAxis->setPhysicsBody(body);
 
+	clawLeft = static_cast<ImageView*>(Helper::seekWidgetByName(static_cast<Layout*>(clawAxis), "clawLeft"));
+	clawRight = static_cast<ImageView*>(Helper::seekWidgetByName(static_cast<Layout*>(clawAxis), "clawRight"));
+
     return true;
 }
 
@@ -97,6 +100,18 @@ void Miner::runRopePull()
 	_isRopeChanging = true;
 	clawAxis->setPhysicsBody(NULL);
 	schedule(schedule_selector(Miner::reduceRopeHeight), 0.025);
+}
+
+void Miner::runClawClose()
+{
+	clawLeft->runAction( RotateBy::create(0.3, -15));
+	clawRight->runAction(RotateBy::create(0.3, 15));
+}
+
+void Miner::runClawOpen()
+{
+	clawLeft->runAction(RotateBy::create(0.03, 15));
+	clawRight->runAction(RotateBy::create(0.03, -15));
 }
 
 void Miner::addRopeHeight(float delate)

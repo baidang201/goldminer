@@ -236,13 +236,13 @@
           <Image Name="shop-background.jpg" />
           <Image Name="shop-desk.png" />
         </Folder>
+        <Project Name="claw.csd" Type="Layer" />
         <Project Name="level1.csd" Type="Layer" />
         <Project Name="level2.csd" Type="Layer" />
         <Project Name="leveltop.csd" Type="Layer" />
         <Project Name="menu.csd" Type="Layer" />
         <Project Name="menuSetting.csd" Type="Layer" />
         <Project Name="starttips.csd" Type="Layer" />
-        <Project Name="claw.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

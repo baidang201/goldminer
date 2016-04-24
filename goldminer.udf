@@ -25,5 +25,18 @@
         <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="starttips.csd" />
+          <FilePathData Path="menuSetting.csd" />
+          <FilePathData Path="menu.csd" />
+          <FilePathData Path="leveltop.csd" />
+          <FilePathData Path="claw.csd" />
+          <FilePathData Path="level1.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="level1.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>

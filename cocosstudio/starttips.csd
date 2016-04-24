@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" ctype="GameLayerObjectData">
         <Size X="960.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="Panel_1" ActionTag="-1541789050" Tag="2" IconVisible="False" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_1" ActionTag="-1541789050" Tag="2" IconVisible="False" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="960.0000" Y="640.0000" />
             <AnchorPoint />
             <Position />
@@ -21,11 +21,11 @@
           </AbstractNodeData>
           <AbstractNodeData Name="goalSymbol" ActionTag="-156279665" Tag="3" IconVisible="False" LeftMargin="-160.3669" RightMargin="1010.3669" TopMargin="279.8105" BottomMargin="210.1895" LeftEage="36" RightEage="36" TopEage="49" BottomEage="49" Scale9OriginX="36" Scale9OriginY="49" Scale9Width="38" Scale9Height="52" ctype="ImageViewObjectData">
             <Size X="110.0000" Y="150.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-105.3669" Y="285.1895" />
+            <AnchorPoint ScaleX="0.4836" ScaleY="0.4539" />
+            <Position X="-107.1741" Y="278.2765" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="-0.1098" Y="0.4456" />
+            <PrePosition X="-0.1116" Y="0.4348" />
             <PreSize X="0.1146" Y="0.2344" />
             <FileData Type="PlistSubImage" Path="goal-symbol.png" Plist="iphonehd/level-sheet.plist" />
           </AbstractNodeData>

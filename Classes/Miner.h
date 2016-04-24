@@ -31,6 +31,8 @@ public:
 
 	void runRopeThrow();
 	void runRopePull();
+	void runClawClose();
+	void runClawOpen();
 
 private:
 
@@ -41,6 +43,8 @@ private:
 
 	ImageView* rope;
 	ImageView* clawAxis;
+	ImageView* clawLeft;
+	ImageView* clawRight;
 
 	bool _isRopeChanging;
 

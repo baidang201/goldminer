@@ -60,11 +60,36 @@ bool MainGame::init()
 
 	Size size = Director::getInstance()->getVisibleSize();
 	setTouchEnabled(true);
+	setTouchMode(Touch::DispatchMode::ONE_BY_ONE);
 
 	auto level = CSLoader::createNode("level1.csb");
 	addChild(level);
 
 	Vector<Node*> vectorGold= Helper::seekWidgetByName(static_cast<Layout*>( level), "panelGold")->getChildren();
+	for (int i = 0; i < vectorGold.size(); i++)
+	{
+		auto gold = vectorGold.at(i);
+		Size goldSize = gold->getContentSize();
+
+		std::string name = gold->getName();
+		if (name == "smallgold")
+		{
+			goldSize = goldSize*0.3;
+		}
+		else if (name == "middlegold")
+		{
+			goldSize = goldSize*0.5;
+		}
+
+		auto body = PhysicsBody::createBox(goldSize);
+		body->setCategoryBitmask(10);
+		body->setCollisionBitmask(10);
+		body->setContactTestBitmask(10);
+		gold->setPhysicsBody(body);
+
+	}
+
+
 
 	auto levelTop = CSLoader::createNode("leveltop.csb");
 	addChild(levelTop);
@@ -150,18 +175,19 @@ bool MainGame::init()
 							miner->runShakeClaw();//钩子左右摆动
 
 							//添加放钩子屏幕监听事件
-							auto listener = EventListenerTouchOneByOne::create();
-							listener->onTouchBegan = [=](Touch* touch, Event* event) 
-							{
-								if (!miner->isRopeChanging())//不伸长的时候，进行伸长
-								{
-									miner->stopShakeActions();
-									miner->runRopeThrow();									
-								}
+							//auto listener = EventListenerTouchOneByOne::create();
+							//listener->onTouchBegan = [=](Touch* touch, Event* event) 
+							//{
+							//	if (!miner->isRopeChanging())//不伸长的时候，进行伸长
+							//	{
+							//		miner->stopShakeActions();
+							//		miner->runRopeThrow();									
+							//	}
 
-								return true;
-							};
-							_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+							//	return true;
+							//};
+
+							//_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 						}
 					),
 					NULL));
@@ -174,16 +200,43 @@ bool MainGame::init()
 	auto physicListener = EventListenerPhysicsContact::create();
 	physicListener->onContactBegin = [=](PhysicsContact& contact)
 	{
+		auto shapb = contact.getShapeB()->getBody()->getNode();
+		if (shapb->getTag() != WORLDTAG)//抓到的是金块 石头
+		{
+			miner->runClawClose();
+		}
+
 		//拉绳子动作	
 		miner->runRopePull();
 		return true;
 	};
 	_eventDispatcher->addEventListenerWithFixedPriority(physicListener, 1);
 
+
+	//添加放钩子屏幕监听事件
+	auto listener = EventListenerTouchOneByOne::create();
+	listener->onTouchBegan = [=](Touch* touch, Event* event)
+	{
+		if (!miner->isRopeChanging())//不伸长的时候，进行伸长
+		{
+			miner->stopShakeActions();
+			miner->runRopeThrow();
+		}
+
+		return true;
+	};
+	listener->onTouchEnded = CC_CALLBACK_2(MainGame::touchEnded, this);	
+
+	auto listenerMouse = EventListenerMouse::create();
+	listenerMouse->onMouseDown = CC_CALLBACK_1(MainGame::mouseDown, this);
+
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(listenerMouse, this);
+
     return true;
 }
 
-bool MainGame::OnTouchBegan(Touch * touch, Event event)
+bool MainGame::onTouchBegan(Touch * touch, Event* event)
 {
 	if (!miner->isRopeChanging())//不伸长的时候，进行伸长
 	{
@@ -192,5 +245,17 @@ bool MainGame::OnTouchBegan(Touch * touch, Event event)
 	}
 
 	return true;
+}
+
+void MainGame::touchEnded(Touch * touch, Event* event)
+{
+	int i;
+	i = 0;
+}
+
+void MainGame::mouseDown(Event * event)
+{
+	int i;
+	i = 0;
 }
 

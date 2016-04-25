@@ -22,10 +22,6 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(MainGame);
 
-	virtual bool onTouchBegan(Touch* touch, Event*  event);
-	void touchEnded(Touch* touch, Event*  event);
-	void mouseDown(Event*  event);
-
 private:
 	int igoalCoin;
 

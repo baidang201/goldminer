@@ -24,9 +24,9 @@ Scene* MainGame::createScene()
 	Size size = Director::getInstance()->getWinSize();
 	PhysicsBody* body = PhysicsBody::createEdgeBox(size);//创建边界
 	//设置碰撞掩码
-	//body->setCategoryBitmask(10);
-	//body->setCollisionBitmask(10);
-	//body->setContactTestBitmask(10);
+	body->setCategoryBitmask(10);
+	body->setCollisionBitmask(10);
+	body->setContactTestBitmask(10);
 
 	Node* node = Node::create();
 	node->setPosition(size/2);
@@ -59,8 +59,6 @@ bool MainGame::init()
 	}
 
 	Size size = Director::getInstance()->getVisibleSize();
-	setTouchEnabled(true);
-	setTouchMode(Touch::DispatchMode::ONE_BY_ONE);
 
 	auto level = CSLoader::createNode("level1.csb");
 	addChild(level);
@@ -117,7 +115,7 @@ bool MainGame::init()
 	btnPause = static_cast<Button*> (Helper::seekWidgetByName(static_cast<Layout*>(levelTop), "timeDown"));
 
 	//黄金矿工
-	miner = Miner::create();
+	miner = Miner::create();	
 	addChild(miner, 20);
 	miner->setPosition(size.width + 100, size.height - 110);
 
@@ -175,89 +173,48 @@ bool MainGame::init()
 							miner->runShakeClaw();//钩子左右摆动
 
 							//添加放钩子屏幕监听事件
-							//auto listener = EventListenerTouchOneByOne::create();
-							//listener->onTouchBegan = [=](Touch* touch, Event* event) 
-							//{
-							//	if (!miner->isRopeChanging())//不伸长的时候，进行伸长
-							//	{
-							//		miner->stopShakeActions();
-							//		miner->runRopeThrow();									
-							//	}
+							auto listener = EventListenerTouchOneByOne::create();
+							listener->onTouchBegan = [=](Touch* touch, Event* event) 
+							{
+								if (!miner->isRopeChanging())//不伸长的时候，进行伸长
+								{
+									miner->stopShakeActions();
+									miner->runRopeThrow();									
+								}
 
-							//	return true;
-							//};
+								return true;
+							};
 
-							//_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+							_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+
+							//创建碰撞事件监听 矿工进入后，才建立碰撞监听。要不然再进入入场动画过程中，矿工在边缘时会触发碰撞
+							auto physicListener = EventListenerPhysicsContact::create();
+							physicListener->onContactBegin = [=](PhysicsContact& contact)
+							{
+								auto shapa = contact.getShapeA()->getBody()->getNode();
+								auto shapb = contact.getShapeB()->getBody()->getNode();
+
+								if (shapb->getTag() != WORLDTAG)//抓到的是金块 石头
+								{
+									miner->runClawClose();
+									miner->addGold(shapb->getName());
+									shapb->removeFromParent();
+								}
+
+								//拉绳子动作	
+								miner->runRopePull();
+								return true;
+							};
+							_eventDispatcher->addEventListenerWithSceneGraphPriority(physicListener, this);
 						}
 					),
 					NULL));
 		}),
 		NULL);
 	goalNode->runAction(anigoalNode);
-
-
-	//创建碰撞事件监听
-	auto physicListener = EventListenerPhysicsContact::create();
-	physicListener->onContactBegin = [=](PhysicsContact& contact)
-	{
-		auto shapb = contact.getShapeB()->getBody()->getNode();
-		if (shapb->getTag() != WORLDTAG)//抓到的是金块 石头
-		{
-			miner->runClawClose();
-			miner->addGold(shapb->getName());
-			shapb->removeFromParent();			
-		}
-
-		//拉绳子动作	
-		miner->runRopePull();
-		return true;
-	};
-	_eventDispatcher->addEventListenerWithFixedPriority(physicListener, 1);
-
-
-	//添加放钩子屏幕监听事件
-	auto listener = EventListenerTouchOneByOne::create();
-	listener->onTouchBegan = [=](Touch* touch, Event* event)
-	{
-		if (!miner->isRopeChanging())//不伸长的时候，进行伸长
-		{
-			miner->stopShakeActions();
-			miner->runRopeThrow();
-		}
-
-		return true;
-	};
-	listener->onTouchEnded = CC_CALLBACK_2(MainGame::touchEnded, this);	
-
-	auto listenerMouse = EventListenerMouse::create();
-	listenerMouse->onMouseDown = CC_CALLBACK_1(MainGame::mouseDown, this);
-
-	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
-	_eventDispatcher->addEventListenerWithSceneGraphPriority(listenerMouse, this);
-
+	
+	
     return true;
 }
 
-bool MainGame::onTouchBegan(Touch * touch, Event* event)
-{
-	if (!miner->isRopeChanging())//不伸长的时候，进行伸长
-	{
-		miner->stopShakeActions();
-		miner->runRopeThrow();
-	}
-
-	return true;
-}
-
-void MainGame::touchEnded(Touch * touch, Event* event)
-{
-	int i;
-	i = 0;
-}
-
-void MainGame::mouseDown(Event * event)
-{
-	int i;
-	i = 0;
-}
 

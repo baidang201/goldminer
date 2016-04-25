@@ -102,7 +102,6 @@ void Miner::runRopePull()
 {
 	unschedule(schedule_selector(Miner::addRopeHeight));
 	_isRopeChanging = true;
-	clawAxis->setPhysicsBody(NULL);
 	schedule(schedule_selector(Miner::reduceRopeHeight), 0.025);
 	
 	if (_gold && _gold->getWeight()>=6)
@@ -154,13 +153,7 @@ void Miner::addGold(std::string type)
 void Miner::addRopeHeight(float delate)
 {
 	ropeHeight += 10;
-	rope->setSize(Size(3, ropeHeight));
-
-	PhysicsBody* body = PhysicsBody::createCircle(6);
-	body->setCategoryBitmask(10);
-	body->setCollisionBitmask(10);
-	body->setContactTestBitmask(10);
-	clawAxis->setPhysicsBody(body);
+	rope->setSize(Size(3, ropeHeight));	
 }
 
 void Miner::reduceRopeHeight(float delate)
@@ -185,9 +178,10 @@ void Miner::reduceRopeHeight(float delate)
 		{
 			_gold->removeFromParent();
 			_gold = nullptr;
+
+			runClawOpen();//只有抓到东西才执行张开
 		}
-		miner->addAnimation(0, "miner-pull-wait", false, 0);  
-		runClawOpen();
+		miner->addAnimation(0, "miner-pull-wait", false, 0);  		
 		runShakeClaw();
 	}
 

@@ -16,7 +16,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="iphonehd/level-background-0.jpg" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="PanelGold" ActionTag="20876975" Tag="31" IconVisible="False" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="PanelGold" ActionTag="20876975" Tag="31" IconVisible="False" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="960.0000" Y="640.0000" />
             <Children>
               <AbstractNodeData Name="smallgold" ActionTag="-831993795" Tag="32" IconVisible="False" LeftMargin="110.6223" RightMargin="751.3777" TopMargin="299.8936" BottomMargin="241.1064" ctype="SpriteObjectData">
@@ -74,36 +74,36 @@
                 <FileData Type="PlistSubImage" Path="gold-0-0.png" Plist="iphonehd/level-sheet.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="biggold" ActionTag="1852892599" Tag="33" IconVisible="False" LeftMargin="646.6862" RightMargin="215.3138" TopMargin="438.8714" BottomMargin="102.1286" ctype="SpriteObjectData">
+              <AbstractNodeData Name="biggold" ActionTag="1852892599" Tag="33" IconVisible="False" LeftMargin="648.1862" RightMargin="216.8138" TopMargin="439.3714" BottomMargin="102.6286" ctype="SpriteObjectData">
                 <Size X="95.0000" Y="98.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="695.6862" Y="151.6286" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.7247" Y="0.2369" />
-                <PreSize X="0.1021" Y="0.1547" />
+                <PreSize X="0.0990" Y="0.1531" />
                 <FileData Type="PlistSubImage" Path="gold-1-0.png" Plist="iphonehd/level-sheet.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="biggold" ActionTag="718994478" Tag="40" IconVisible="False" LeftMargin="835.0004" RightMargin="26.9996" TopMargin="361.0526" BottomMargin="179.9474" ctype="SpriteObjectData">
+              <AbstractNodeData Name="biggold" ActionTag="718994478" Tag="40" IconVisible="False" LeftMargin="836.5004" RightMargin="28.4996" TopMargin="361.5526" BottomMargin="180.4474" ctype="SpriteObjectData">
                 <Size X="95.0000" Y="98.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="884.0004" Y="229.4474" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.9208" Y="0.3585" />
-                <PreSize X="0.1021" Y="0.1547" />
+                <PreSize X="0.0990" Y="0.1531" />
                 <FileData Type="PlistSubImage" Path="gold-1-0.png" Plist="iphonehd/level-sheet.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="biggold" ActionTag="2014258838" Tag="43" IconVisible="False" LeftMargin="129.7628" RightMargin="732.2372" TopMargin="529.2604" BottomMargin="11.7396" ctype="SpriteObjectData">
+              <AbstractNodeData Name="biggold" ActionTag="2014258838" Tag="43" IconVisible="False" LeftMargin="131.2628" RightMargin="733.7372" TopMargin="529.7604" BottomMargin="12.2396" ctype="SpriteObjectData">
                 <Size X="95.0000" Y="98.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="178.7628" Y="61.2396" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1862" Y="0.0957" />
-                <PreSize X="0.1021" Y="0.1547" />
+                <PreSize X="0.0990" Y="0.1531" />
                 <FileData Type="PlistSubImage" Path="gold-1-0.png" Plist="iphonehd/level-sheet.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -118,14 +118,14 @@
                 <FileData Type="PlistSubImage" Path="treasure-bag.png" Plist="iphonehd/level-sheet.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="bigstone" ActionTag="818030912" Tag="37" IconVisible="False" LeftMargin="236.9406" RightMargin="673.0594" TopMargin="319.5923" BottomMargin="268.4077" ctype="SpriteObjectData">
+              <AbstractNodeData Name="bigstone" ActionTag="818030912" Tag="37" IconVisible="False" LeftMargin="231.9406" RightMargin="668.0594" TopMargin="319.5923" BottomMargin="268.4077" ctype="SpriteObjectData">
                 <Size X="60.0000" Y="52.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="261.9406" Y="294.4077" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2729" Y="0.4600" />
-                <PreSize X="0.0521" Y="0.0812" />
+                <PreSize X="0.0625" Y="0.0812" />
                 <FileData Type="PlistSubImage" Path="stone-1.png" Plist="iphonehd/level-sheet.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -140,25 +140,25 @@
                 <FileData Type="PlistSubImage" Path="stone-1.png" Plist="iphonehd/level-sheet.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="bigstone" ActionTag="650511503" Tag="35" IconVisible="False" LeftMargin="251.0021" RightMargin="658.9979" TopMargin="508.8828" BottomMargin="79.1172" ctype="SpriteObjectData">
+              <AbstractNodeData Name="bigstone" ActionTag="650511503" Tag="35" IconVisible="False" LeftMargin="246.0021" RightMargin="653.9979" TopMargin="508.8828" BottomMargin="79.1172" ctype="SpriteObjectData">
                 <Size X="60.0000" Y="52.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="276.0021" Y="105.1172" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2875" Y="0.1642" />
-                <PreSize X="0.0521" Y="0.0812" />
+                <PreSize X="0.0625" Y="0.0812" />
                 <FileData Type="PlistSubImage" Path="stone-1.png" Plist="iphonehd/level-sheet.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="smallstone" ActionTag="-693209737" Tag="34" IconVisible="False" LeftMargin="46.9767" RightMargin="853.0233" TopMargin="499.1478" BottomMargin="88.8522" ctype="SpriteObjectData">
+              <AbstractNodeData Name="smallstone" ActionTag="-693209737" Tag="34" IconVisible="False" LeftMargin="51.9767" RightMargin="858.0233" TopMargin="499.1478" BottomMargin="88.8522" ctype="SpriteObjectData">
                 <Size X="50.0000" Y="52.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="76.9767" Y="114.8522" />
                 <Scale ScaleX="0.5000" ScaleY="0.5000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.0802" Y="0.1795" />
-                <PreSize X="0.0625" Y="0.0812" />
+                <PreSize X="0.0521" Y="0.0812" />
                 <FileData Type="PlistSubImage" Path="stone-0.png" Plist="iphonehd/level-sheet.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>

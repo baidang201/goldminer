@@ -19,9 +19,10 @@ public:
     virtual bool init(std::string type);
 
 	int getWeight();
-
+	int getValue();
 private:
 	int weight;
+	int value;
 };
 
 #endif // __Gold_SCENE_H__

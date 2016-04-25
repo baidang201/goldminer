@@ -3,6 +3,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "spine\spine-cocos2dx.h"
+#include <stdlib.h>
 
 USING_NS_CC;
 
@@ -29,6 +30,7 @@ bool Gold::init(std::string type)
 		}
 		setScale(0.3);
 		weight = 3;
+		value = 50;
 	}
 	else if (type == "middlegold")
 	{
@@ -38,6 +40,7 @@ bool Gold::init(std::string type)
 		}
 		setScale(0.5);
 		weight = 4;
+		value = 250;
 	}
 	else if (type == "biggold")
 	{
@@ -46,6 +49,7 @@ bool Gold::init(std::string type)
 			return false;
 		}
 		weight = 5;
+		value = 500;
 	}
 	else if (type == "smallstone")
 	{
@@ -55,6 +59,7 @@ bool Gold::init(std::string type)
 		}
 		setScale(0.5);
 		weight = 7;
+		value = 11;
 	}
 	else if (type == "bigstone")
 	{
@@ -63,6 +68,7 @@ bool Gold::init(std::string type)
 			return false;
 		}
 		weight = 8;
+		value = 20;
 	}
 	else if (type == "bag")
 	{
@@ -71,6 +77,7 @@ bool Gold::init(std::string type)
 			return false;
 		}
 		weight = 1;
+		value = rand();
 	}
 	return true;
 }
@@ -78,4 +85,9 @@ bool Gold::init(std::string type)
 int Gold::getWeight()
 {
 	return weight;
+}
+
+int Gold::getValue()
+{
+	return value;
 }

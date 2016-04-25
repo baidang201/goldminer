@@ -175,7 +175,8 @@ void Miner::reduceRopeHeight(float delate)
 		_isRopeChanging = false;
 		
 		if (_gold)
-		{
+		{			
+			_eventDispatcher->dispatchCustomEvent("pullcomplete", String::createWithFormat("%d", _gold->getValue()) );
 			_gold->removeFromParent();
 			_gold = nullptr;
 

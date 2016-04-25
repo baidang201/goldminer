@@ -37,15 +37,16 @@ public:
 
 	void addGold(std::string type);
 
+public:
+	ImageView* clawAxis;
+	ImageView* rope;
 private:
 
 	void addRopeHeight(float delate);
 	void reduceRopeHeight(float delate);
 
 	SkeletonAnimation* miner;
-
-	ImageView* rope;
-	ImageView* clawAxis;
+	
 	ImageView* clawLeft;
 	ImageView* clawRight;
 

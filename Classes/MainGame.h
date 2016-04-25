@@ -24,6 +24,8 @@ public:
 
 private:
 	int igoalCoin;
+	int icurCoin;
+	int icurLevel;
 
 	Text* goalCoin;
 	Text* curCoin;

@@ -86,9 +86,7 @@ bool MainGame::init()
 		gold->setPhysicsBody(body);
 
 	}
-
-
-
+	
 	auto levelTop = CSLoader::createNode("leveltop.csb");
 	addChild(levelTop);
 		
@@ -97,8 +95,8 @@ bool MainGame::init()
 	levelTop->runAction(aniTimeDowm);
 
 	//初始化当前关卡，剩余时间  目标分数，当前金币.       
-	int icurLevel = UserDefault::getInstance()->getIntegerForKey("curLevel");
-	int icurCoin = UserDefault::getInstance()->getIntegerForKey("curCoin");
+	icurLevel = UserDefault::getInstance()->getIntegerForKey("curLevel");
+	icurCoin = UserDefault::getInstance()->getIntegerForKey("curCoin");
 	igoalCoin = 650 + 135 * (icurLevel - 1) * (icurLevel - 1) + 410 * (icurLevel - 1);
 
 	goalCoin = static_cast<Text*> (Helper::seekWidgetByName( static_cast<Layout*>(levelTop), "goalCoin"));
@@ -206,6 +204,40 @@ bool MainGame::init()
 								return true;
 							};
 							_eventDispatcher->addEventListenerWithSceneGraphPriority(physicListener, this);
+
+							//添加拉绳子结束的自定义回调
+							_eventDispatcher->addCustomEventListener("pullcomplete", [=](EventCustom* evn)
+							{
+								String* strValue = (String*)(evn->getUserData());
+
+								int addGold = strValue->intValue();
+								icurCoin += addGold;								
+
+								auto lbAddGold = LabelTTF::create();
+								lbAddGold->setString(String::createWithFormat("%d", icurCoin)->getCString());
+								lbAddGold->setFontSize(20);
+								lbAddGold->setColor(ccc3(250,0,0));
+								lbAddGold->setPosition( miner->rope->convertToWorldSpace( miner->clawAxis->getPosition() ));
+								addChild(lbAddGold);
+
+
+								auto actionSpawn = Spawn::create(
+									MoveTo::create(1, curCoin->getPosition()),
+									Sequence::create(ScaleTo::create(0.5, 3), ScaleTo::create(0.5, 0.1), nullptr),
+									nullptr);
+
+								auto seq = Sequence::create(actionSpawn,
+									CallFuncN::create(
+										[=](Node*)
+									{
+										lbAddGold->removeFromParent();
+										curCoin->setString(String::createWithFormat("%d", icurCoin)->getCString());
+									}
+									), 
+									nullptr);
+								
+							}
+							);
 						}
 					),
 					NULL));

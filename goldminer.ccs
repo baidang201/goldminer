@@ -244,6 +244,7 @@
         <Project Name="menuSetting.csd" Type="Layer" />
         <Project Name="starttips.csd" Type="Layer" />
         <Project Name="gamepause.csd" Type="Layer" />
+        <Project Name="gameresult.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

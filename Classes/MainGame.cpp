@@ -259,7 +259,7 @@ bool MainGame::init()
 			onExit();
 			auto* gamePause = GamePause::createScene();
 			//addChild(gamePause);
-			Director::getInstance()->getRunningScene->addChild(gamePause);
+			Director::getInstance()->getRunningScene()->addChild(gamePause);
 		}
 	});
 	
@@ -281,7 +281,25 @@ bool MainGame::init()
 
 void MainGame::exitLevel()
 {
-	Director::getInstance()->replaceScene(GameMenu::createScene());
+	Size size = Director::getInstance()->getVisibleSize();
+
+	auto exitLevelTip = CSLoader::createNode("gameresult.csb");
+	addChild(exitLevelTip);
+
+	auto gameExit = static_cast<Text*>(Helper::seekWidgetByName( static_cast<Widget*>(exitLevelTip), "gameExit" ));
+	
+	auto seq = Sequence::create(
+		EaseBackInOut::create(MoveTo::create(0.5, size / 2)),
+		DelayTime::create(1),
+		EaseBackInOut::create(MoveTo::create(0.5, Vec2(size.width + 300, size.height / 2))),
+		CallFuncN::create(
+			[=](Node*)
+	{
+		Director::getInstance()->replaceScene(GameMenu::createScene());
+	}),
+	nullptr);	
+
+	gameExit->runAction(seq);
 }
 
 

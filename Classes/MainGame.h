@@ -22,6 +22,7 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(MainGame);
 
+	void exitLevel();
 private:
 	int igoalCoin;
 	int icurCoin;

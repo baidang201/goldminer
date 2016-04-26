@@ -1,8 +1,10 @@
 #include "MainGame.h"
 #include "GameSetting.h"
+#include "GamePause.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "SimpleAudioEngine.h"
+#include "GameMenu.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -104,6 +106,7 @@ bool MainGame::init()
 	curCoin = static_cast<Text*> (Helper::seekWidgetByName(static_cast<Layout*>(levelTop), "curCoin"));
 	curLevel = static_cast<Text*> (Helper::seekWidgetByName(static_cast<Layout*>(levelTop), "curLevel"));
 	timeDown = static_cast<Text*> (Helper::seekWidgetByName(static_cast<Layout*>(levelTop), "timeDown"));
+	btnPause = static_cast<Button*> (Helper::seekWidgetByName(static_cast<Layout*>(levelTop), "btnPause"));
 
 	goalCoin->setText(String::createWithFormat("%d", igoalCoin)->getCString());
 	curCoin->setText(String::createWithFormat("%d", icurCoin)->getCString());
@@ -247,8 +250,38 @@ bool MainGame::init()
 		NULL);
 	goalNode->runAction(anigoalNode);
 	
+
+	//ÓÎÏ·ÔÝÍ£¼àÌý
+	btnPause->addTouchEventListener([=](Ref* pSender, Widget::TouchEventType type)
+	{
+		if (type == Widget::TouchEventType::ENDED)
+		{
+			onExit();
+			auto* gamePause = GamePause::createScene();
+			//addChild(gamePause);
+			Director::getInstance()->getRunningScene->addChild(gamePause);
+		}
+	});
 	
+	//»Ö¸´
+	_eventDispatcher->addCustomEventListener("goOnGame", [=](EventCustom* evn)
+	{
+		onEnter();
+	});
+
+	//ÍË³ö
+	_eventDispatcher->addCustomEventListener("exitLevel", [=](EventCustom* evn)
+	{
+		onEnter();
+		exitLevel();
+	});
+
     return true;
+}
+
+void MainGame::exitLevel()
+{
+	Director::getInstance()->replaceScene(GameMenu::createScene());
 }
 
 

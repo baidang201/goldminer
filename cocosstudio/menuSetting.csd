@@ -91,17 +91,6 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Sprite_1" ActionTag="1873913461" Tag="25" IconVisible="False" LeftMargin="-72.8298" RightMargin="322.8298" TopMargin="629.0502" BottomMargin="-379.0502" ctype="SpriteObjectData">
-            <Size X="70.0000" Y="70.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-37.8298" Y="-344.0502" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="-0.1182" Y="-1.0752" />
-            <PreSize X="0.2188" Y="0.2188" />
-            <FileData Type="PlistSubImage" Path="music-on-btn-0.png" Plist="iphonehd/general-sheet.plist" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

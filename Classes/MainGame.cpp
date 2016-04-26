@@ -99,6 +99,7 @@ bool MainGame::init()
 	icurCoin = UserDefault::getInstance()->getIntegerForKey("curCoin");
 	igoalCoin = 650 + 135 * (icurLevel - 1) * (icurLevel - 1) + 410 * (icurLevel - 1);
 
+	Image_1 = static_cast<ImageView*> (Helper::seekWidgetByName(static_cast<Layout*>(levelTop), "Image_1"));
 	goalCoin = static_cast<Text*> (Helper::seekWidgetByName( static_cast<Layout*>(levelTop), "goalCoin"));
 	curCoin = static_cast<Text*> (Helper::seekWidgetByName(static_cast<Layout*>(levelTop), "curCoin"));
 	curLevel = static_cast<Text*> (Helper::seekWidgetByName(static_cast<Layout*>(levelTop), "curLevel"));
@@ -222,7 +223,7 @@ bool MainGame::init()
 
 
 								auto actionSpawn = Spawn::create(
-									MoveTo::create(1, curCoin->getPosition()),
+									MoveTo::create(1, Image_1->convertToWorldSpace( curCoin->getPosition())),//todo(liyh) ÐÞÕý×ø±ê
 									Sequence::create(ScaleTo::create(0.5, 3), ScaleTo::create(0.5, 0.1), nullptr),
 									nullptr);
 
@@ -236,6 +237,7 @@ bool MainGame::init()
 									), 
 									nullptr);
 								
+								lbAddGold->runAction(seq);
 							}
 							);
 						}

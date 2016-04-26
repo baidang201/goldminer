@@ -27,8 +27,10 @@ private:
 	int icurCoin;
 	int icurLevel;
 
+	ImageView* Image_1;//coin父节点
 	Text* goalCoin;
 	Text* curCoin;
+	ImageView* Image_2;//level timedown父节点
 	Text* curLevel;
 	Text* timeDown;
 

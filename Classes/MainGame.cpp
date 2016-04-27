@@ -11,13 +11,14 @@ using namespace CocosDenshion;
 using namespace cocostudio::timeline;
 
 #define WORLDTAG 100
+#define LEFTTIME 60
 
 MainGame::~MainGame()
 {
 	//移除自定义监听器
 	_eventDispatcher->removeCustomEventListeners("pullcomplete");
 	_eventDispatcher->removeCustomEventListeners("goOnGame");
-	_eventDispatcher->removeCustomEventListeners("pullcomplete");
+	_eventDispatcher->removeCustomEventListeners("exitLevel");
 }
 
 Scene* MainGame::createScene()
@@ -62,7 +63,7 @@ bool MainGame::init()
         return false;
     }
 
-	leftTime = 10;
+	leftTime = LEFTTIME;
 
 	bool isPlayBgMusic = UserDefault::getInstance()->getBoolForKey("isPlayBgMusic", true);
 	if (isPlayBgMusic)
@@ -181,7 +182,7 @@ bool MainGame::init()
 						[=](Ref* pSender) 
 						{
 							aniTimeDowm->gotoFrameAndPlay(0, 60, false);//时间控件入场
-							schedule(schedule_selector(MainGame::timeDownCount), 1, 59, 0);
+							schedule(schedule_selector(MainGame::timeDownCount), 1, LEFTTIME - 1, 0);
 
 
 							miner->runShakeClaw();//钩子左右摆动

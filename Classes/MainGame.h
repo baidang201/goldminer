@@ -13,6 +13,7 @@ using namespace cocostudio::timeline;
 class MainGame : public cocos2d::Layer
 {
 public:
+	~MainGame();
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
 
@@ -22,7 +23,11 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(MainGame);
 
+	void timeDownCount(float dt);
+
 	void exitLevel();
+
+	void gameResult();
 private:
 	int igoalCoin;
 	int icurCoin;
@@ -39,6 +44,8 @@ private:
 
 	Miner* miner;
 	ActionTimeline* aniTimeDowm;
+
+	int leftTime;
 };
 
 #endif // __MainGame_SCENE_H__

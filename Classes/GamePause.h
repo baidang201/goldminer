@@ -27,6 +27,8 @@ public:
 	void toggleBgMusic(Ref* pSender, Widget::TouchEventType type);
 
 	void removePause(Ref* pSender);
+
+	void setNextLevelDisable();
 private:
 
 	Node* menuSetting;

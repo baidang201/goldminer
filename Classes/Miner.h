@@ -23,6 +23,7 @@ public:
     CREATE_FUNC(Miner);
 
 	void runAppear();
+	void runDisApper();
 
 	void runShakeClaw();
 
@@ -36,6 +37,7 @@ public:
 	void runClawOpen();
 
 	void addGold(std::string type);
+	void dropGold();
 
 public:
 	ImageView* clawAxis;

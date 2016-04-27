@@ -16,7 +16,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="iphonehd/level-background-0.jpg" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="PanelGold" ActionTag="20876975" Tag="31" IconVisible="False" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="panelGold" ActionTag="20876975" Tag="31" IconVisible="False" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="960.0000" Y="640.0000" />
             <Children>
               <AbstractNodeData Name="smallgold" ActionTag="-831993795" Tag="32" IconVisible="False" LeftMargin="110.6223" RightMargin="751.3777" TopMargin="299.8936" BottomMargin="241.1064" ctype="SpriteObjectData">

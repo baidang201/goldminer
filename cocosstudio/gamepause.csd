@@ -70,7 +70,7 @@
             <PrePosition X="0.5045" Y="0.3719" />
             <PreSize X="0.7500" Y="0.2438" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="PlistSubImage" Path="btn-1.png" Plist="iphonehd/general-sheet.plist" />
+            <DisabledFileData Type="PlistSubImage" Path="btn-2.png" Plist="iphonehd/general-sheet.plist" />
             <PressedFileData Type="PlistSubImage" Path="btn-1.png" Plist="iphonehd/general-sheet.plist" />
             <NormalFileData Type="PlistSubImage" Path="btn-0.png" Plist="iphonehd/general-sheet.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />

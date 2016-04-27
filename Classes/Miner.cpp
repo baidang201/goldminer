@@ -68,6 +68,12 @@ void Miner::runAppear()
 	miner->addAnimation(0, "wait", false, 2);
 }
 
+void Miner::runDisApper()
+{
+	miner->addAnimation(0, "walk", true, 0);
+	miner->addAnimation(0, "wait", false, 2);
+}
+
 void Miner::runShakeClaw()
 {
 	rope->setRotation(0);
@@ -147,6 +153,17 @@ void Miner::addGold(std::string type)
 	{
 		_gold->setAnchorPoint(Vec2(0.5, 1));
 		_gold->setPosition(Vec2(6,0));
+	}
+}
+
+void Miner::dropGold()
+{
+	if (_gold)
+	{
+		_gold->removeFromParent();
+		_gold = nullptr;
+
+		runClawOpen();//只有抓到东西才执行张开
 	}
 }
 

@@ -153,3 +153,9 @@ void GamePause::removePause(Ref * pSender)
 	removeFromParentAndCleanup(true);
 	_eventDispatcher->dispatchCustomEvent("goOnGame");
 }
+
+void GamePause::setNextLevelDisable()
+{
+	btnNextLevel->setEnabled(false);
+	//btnNextLevel->loadTextureDisabled("btn-2.png", Widget::TextureResType::PLIST);
+}

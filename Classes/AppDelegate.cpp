@@ -50,7 +50,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 		UserDefault::getInstance()->setBoolForKey("isPlayBgMusic", true);
 
 		UserDefault::getInstance()->setIntegerForKey("curLevel", 1);
-		UserDefault::getInstance()->setBoolForKey("curCoin", 0);
+		UserDefault::getInstance()->setIntegerForKey("curCoin", 0);
 	}
 
     // create a scene. it's an autorelease object
